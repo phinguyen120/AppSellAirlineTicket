@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_container_home"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/Gray"
+    android:fillViewport="true"
+    >
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:layout_marginLeft="15dp"
+       >
+       <androidx.viewpager2.widget.ViewPager2
+           android:id="@+id/viewpage2"
+           android:layout_width="match_parent"
+           android:layout_height="200dp" />
+       <me.relex.circleindicator.CircleIndicator3
+           android:id="@+id/circle_Indicator"
+           android:layout_width="wrap_content"
+           android:layout_height="10dp"
+           app:ci_drawable="@drawable/bg_indicator"
+           android:layout_centerHorizontal="true"
+           android:layout_below="@+id/viewpage2"
+           android:layout_marginLeft="170dp"
+           />
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           android:layout_margin="14dp"
+           android:padding="16dp"
+           android:layout_below="@+id/circle_Indicator"
+           android:background="@drawable/bg_flight_search"
+           >
+           <!-- Header -->
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Vé máy bay"
+               android:textSize="24sp"
+               android:textStyle="bold"
+               android:paddingBottom="16dp"/>
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Một chiều / Khứ hồi"
+               android:textSize="16sp"/>
+           <View
+               android:layout_width="match_parent"
+               android:layout_height="1dp"
+               android:background="@android:color/darker_gray"
+               android:layout_marginBottom="16dp"/>
+
+           <!-- From -->
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:paddingBottom="16dp">
+
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Từ"
+                   android:textSize="16sp"/>
+
+               <EditText
+                   android:id="@+id/etHomeFragmentFlightFrom"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:hint="Hà Nội (HN)"
+                   android:drawableLeft="@drawable/flight_from_icon"
+                   android:tint="@android:color/darker_gray"
+                   android:textColor="@color/black"
+                   android:textColorHint="#575555"
+                   android:inputType="text"
+                   android:paddingBottom="15dp"
+                   />
+           </LinearLayout>
+           <!-- To -->
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:paddingBottom="16dp">
+
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Đến"
+                   android:textSize="16sp"/>
+
+               <EditText
+                   android:id="@+id/etHomeFragmentFlightFor"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:hint="TP HCM (SGN)"
+                   android:drawableLeft="@drawable/flight_from_icon"
+                   android:tint="@android:color/darker_gray"
+                   android:textColor="@color/black"
+                   android:textColorHint="#575555"
+                   android:inputType="text"
+                   android:paddingBottom="15dp"
+                   />
+           </LinearLayout>
+           <!-- Divider -->
+           <View
+               android:layout_width="match_parent"
+               android:layout_height="1dp"
+               android:background="@android:color/darker_gray"
+               android:layout_marginBottom="16dp"/>
+
+           <!-- Departure date -->
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:paddingBottom="16dp">
+
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Ngày khởi hành"
+                   android:textSize="16sp"/>
+               <EditText
+                   android:id="@+id/etHomeFragmentDateTimePicker"
+                   android:layout_width="140dp"
+                   android:layout_height="50dp"
+                   android:layout_marginTop="5dp"
+                   android:text=""
+                   android:drawableLeft="@drawable/baseline_date_range_24"
+                   android:textSize="14sp"
+                   android:textColor="@android:color/darker_gray"/>
+           </LinearLayout>
+
+           <!-- Divider -->
+           <View
+               android:layout_width="match_parent"
+               android:layout_height="1dp"
+               android:background="@android:color/darker_gray"
+               android:layout_marginBottom="16dp"/>
+
+           <!-- Round trip -->
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:paddingBottom="16dp">
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Hạng ghế"
+                   android:textSize="14sp"
+                   android:textColor="@android:color/darker_gray"/>
+               <EditText
+                   android:id="@+id/etHomeFragmentHangGhe"
+                   android:layout_width="150dp"
+                   android:layout_height="50dp"
+                   android:text="Phổ thông"
+                   android:drawableLeft="@drawable/baseline_airline_hanghe"
+                   android:textSize="14sp"
+                   android:textColor="@color/black"/>
+           </LinearLayout>
+           <Button
+               android:id="@+id/searchButton"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Tìm chuyến bay"
+               android:textAllCaps="false"
+               android:textSize="18sp"
+               android:background="@color/Orange"
+               android:textColor="@android:color/white"
+               android:layout_marginTop="16dp"/>
+       </LinearLayout>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Hà Nội - Sài Gòn"
+           android:textColor="@color/black"
+           android:textSize="24dp"
+           android:layout_marginTop="15dp"
+           android:layout_marginBottom="8dp"
+           />
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/rcvTicketHomeFragment"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="20dp"
+           />
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:layout_marginTop="20dp">
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:orientation="vertical">
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Đối tác hàng không"
+                   android:textSize="16dp"
+                   android:textColor="@color/black"
+                   />
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Đối tác hàng không nội địa và quốc tế"
+                   android:textSize="12dp"
+                   android:textColor="@color/Gray2"
+                   android:layout_marginTop="10dp"
+                   android:layout_marginBottom="10dp"
+                   />
+               <TextView
+                   android:layout_width="200dp"
+                   android:layout_height="wrap_content"
+                   android:text="Những đối tác hàng không toàn cầu sẽ chắp cánh đưa bạn đến mọi địa điểm trên thế giới."
+                   android:textSize="12dp"
+                   android:textColor="@color/black"
+                   />
+           </LinearLayout>
+           <ImageView
+               android:layout_width="150dp"
+               android:layout_height="150dp"
+               android:src="@drawable/company"
+               android:layout_marginLeft="20dp"
+               />
+       </LinearLayout>
+   </LinearLayout>
+</androidx.core.widget.NestedScrollView>

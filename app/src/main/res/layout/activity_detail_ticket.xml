@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:fillViewport="true"
+    tools:context=".DetailTicketActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/btn_DetailTicket_Back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/back_icon"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            card_view:cardCornerRadius="16dp"
+            card_view:cardElevation="6dp"
+            android:layout_marginTop="8dp"
+            >
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Airline name and logo -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:id="@+id/tv_DetailTicket_AirlineName"
+                        android:layout_marginStart="8dp"
+                        android:text="VietJet Air"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <!-- Flight times -->
+                <LinearLayout
+                    android:layout_marginTop="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:id="@+id/tv_DetailTicket_DepartureTime"
+                        android:layout_weight="1"
+                        android:gravity="start"
+                        android:text="12:25"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/tv_DetailTicket_FlightDuration"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="2h 5m\nBay thẳng"
+                        android:textAlignment="center"
+                        android:textSize="12sp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/tv_DetailTicket_ArrivalTime"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="14:30"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <!-- Airports -->
+                <LinearLayout
+                    android:layout_marginTop="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/tv_DetailTicket_FromAirport"
+                        android:layout_weight="1"
+                        android:text="HAN"
+                        android:gravity="start"
+                        android:textSize="14sp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tv_DetailTicket_ToAirport"
+                        android:layout_weight="1"
+                        android:text="SGN"
+                        android:gravity="end"
+                        android:textSize="14sp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_DetailTicket_DepartureDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="01-05-2025"
+                    android:textColor="@color/Gray2"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    />
+                <TextView
+                    android:id="@+id/tv_DetailTicket_SeatClass"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"/>
+                <LinearLayout
+                    android:layout_marginTop="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_DetailTicket_Price"
+                        android:text="1.608.968 VND/khách"
+                        android:textColor="#FF5722"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:textAlignment="textEnd"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thông tin khách hàng"
+            android:layout_marginTop="12dp"
+            android:textSize="26dp"
+            android:textColor="@color/black"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Số hành khách"
+                android:textSize="16sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Người lớn"
+                        android:textColor="@color/black"
+                        />
+                    <EditText
+                        android:id="@+id/etDetailTicketCount1"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:text="1"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="@color/Gray2"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:background="@drawable/edittext_background"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Trẻ em dưới 12 tuổi"
+                        android:textColor="@color/black"
+                        />
+                    <EditText
+                        android:id="@+id/etDetailTicketCount2"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:text="0"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="@color/Gray2"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:background="@drawable/edittext_background"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+            <Button
+                android:id="@+id/btn_DetailTicket_OK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OK"
+                android:background="@color/Orange"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/DetailTicket_Container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Người lớn"
+                android:textColor="@color/black"
+                android:textStyle="italic"
+                android:background="@color/Gray"
+                />
+            <LinearLayout
+                android:id="@+id/DetailTicket_Container_Form_adult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Trẻ em"
+                android:textColor="@color/black"
+                android:textStyle="italic"
+                android:background="@color/Gray"
+                />
+            <LinearLayout
+                android:id="@+id/DetailTicket_Container_Form_childen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/Gray"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:layout_marginTop="12dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/Gray"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Thành tiền :"
+                        android:textColor="@color/black"
+                        android:textSize="24dp"
+                        android:textStyle="italic" />
+                    <TextView
+                        android:id="@+id/tv_DetailTicket_Total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Thành tiền :"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:textColor="#FF5722"
+                        />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnDetailTicketPay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#FF0000"
+                    android:text="Thanh toán"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="110dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

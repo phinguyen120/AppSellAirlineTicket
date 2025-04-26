@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="15dp"
+    android:orientation="vertical"
+    tools:context=".AirportOverLayActivity">
+    <ImageButton
+        android:id="@+id/btnClose"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/baseline_close_24"
+        android:layout_gravity="end"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bg_circle_buttonclose"
+        />
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
+
+       <EditText
+           android:id="@+id/edtSearch"
+           android:layout_width="300dp"
+           android:layout_height="35dp"
+           android:paddingLeft="10dp"
+           android:layout_marginLeft="15dp"
+           android:hint="Tim kiếm sân bay"
+           android:textColor="@color/black"
+           android:textColorHint="@color/Gray"
+           android:background="@drawable/edittext_background"
+           />
+       <Button
+           android:id="@+id/btnSearch"
+           android:layout_width="wrap_content"
+           android:layout_height="40dp"
+           android:text="Tìm kiếm"
+           />
+   </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvAirportSearchFrom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"/>
+</LinearLayout>

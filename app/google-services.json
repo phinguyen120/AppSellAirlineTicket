@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "451466110571",
+    "project_id": "sell-airline",
+    "storage_bucket": "sell-airline.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:451466110571:android:279c32eeae02db1109332e",
+        "android_client_info": {
+          "package_name": "com.example.app_sellairlineticket"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMLpnrT7OMO3V_qdONrDMq7M9D1sPPCsw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:451466110571:android:b0459633a0660df009332e",
+        "android_client_info": {
+          "package_name": "com.example.app_sellticket"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMLpnrT7OMO3V_qdONrDMq7M9D1sPPCsw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <!-- Tên hãng bay -->
+        <TextView
+            android:id="@+id/tvHistory_NameAirline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Vietnam Airlines"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#1E88E5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Hành trình -->
+        <TextView
+            android:id="@+id/tvHistory_FromTo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="HAN → SGN"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/tvHistory_NameAirline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+        <TextView
+            android:id="@+id/tvHistory_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="HAN → SGN"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:gravity="center"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tvHistory_FromTo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+        <!-- Thời gian bay -->
+        <TextView
+            android:id="@+id/tvHistory_Time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="07:00 - 09:00"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/tvHistory_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="4dp" />
+
+        <!-- Tổng tiền -->
+        <TextView
+            android:id="@+id/tvHistory_Total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.200.000đ"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#D32F2F"
+            app:layout_constraintTop_toBottomOf="@id/tvHistory_Time"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="12dp" />
+
+        <!-- Ngày đặt vé -->
+        <TextView
+            android:id="@+id/tvHistory_DateOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đặt ngày: 24/04/2025"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            app:layout_constraintTop_toBottomOf="@id/tvHistory_Time"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="12dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
