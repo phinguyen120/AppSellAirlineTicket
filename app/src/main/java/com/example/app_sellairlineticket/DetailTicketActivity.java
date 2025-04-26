@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -19,6 +20,8 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -40,6 +43,7 @@ import java.util.List;
 import java.util.TimeZone;
 
 public class DetailTicketActivity extends AppCompatActivity {
+    private static final int REQUEST_NOTIFICATION_PERMISSION_CODE = 1001;
     private TextView tvNameAirline,tvDeparturetime,tvArrivaltime,tvFrom,tvTo,tvSeatClass,tvPrice,tvDuration,tvToltal,tvDepartureDate;
     private ImageView btnBack;
     private Button btnOK, btnPay;
@@ -84,6 +88,15 @@ public class DetailTicketActivity extends AppCompatActivity {
         tvDepartureDate.setText(date);
         btnBack.setOnClickListener(v->finish());
 
+        // Request notification permission on Android 13+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS)
+                    != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{android.Manifest.permission.POST_NOTIFICATIONS},
+                        REQUEST_NOTIFICATION_PERMISSION_CODE);
+            }
+        }
 
         count1 = findViewById(R.id.etDetailTicketCount1);
         count2 = findViewById(R.id.etDetailTicketCount2);
@@ -225,19 +238,19 @@ public class DetailTicketActivity extends AppCompatActivity {
     private void setFlightReminder(int day,int month, int year, int hour,int minute) {
 
         Calendar flightCalendar = Calendar.getInstance();
-        flightCalendar.set(year, month, day, hour, minute, 0);
+        flightCalendar.set(year, month - 1, day, hour, minute, 0);
         flightCalendar.set(Calendar.MILLISECOND, 0);
 
         long flightTimeMillis = flightCalendar.getTimeInMillis();
 
-        long reminder1DayMillis = flightTimeMillis - 1 * 60 * 1000;
+        long reminderOneMinuteMillis = flightTimeMillis - 1 * 60 * 1000;
 
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this, FlightReminderReceiver.class);
         PendingIntent pendingIntent1 = PendingIntent.getBroadcast(this, 5678, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
         if (alarmManager != null) {
-            alarmManager.setExact(AlarmManager.RTC_WAKEUP, reminder1DayMillis, pendingIntent1);
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP, reminderOneMinuteMillis, pendingIntent1);
             Toast.makeText(this, "Đã đặt nhắc nhở chuyến bay!", Toast.LENGTH_SHORT).show();
         }
     }
